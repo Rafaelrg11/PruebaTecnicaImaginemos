@@ -1,0 +1,14 @@
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.deps.json
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.runtimeconfig.json
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.pdb
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.csproj.AssemblyReference.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.AssemblyInfoInputs.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.AssemblyInfo.cs
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\refint\PruebaTecnicaImaginemos.Domain.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.pdb
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\PruebaTecnicaImaginemos.Domain.genruntimeconfig.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Domain\obj\Debug\net8.0\ref\PruebaTecnicaImaginemos.Domain.dll

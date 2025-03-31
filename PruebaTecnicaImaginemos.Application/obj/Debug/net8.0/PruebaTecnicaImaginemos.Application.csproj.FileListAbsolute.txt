@@ -1,0 +1,17 @@
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Application.deps.json
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Application.runtimeconfig.json
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Application.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Application.pdb
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\bin\Debug\net8.0\PruebaTecnicaImaginemos.Domain.pdb
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.csproj.AssemblyReference.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.AssemblyInfoInputs.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.AssemblyInfo.cs
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.csproj.CoreCompileInputs.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTe.B9CD5083.Up2Date
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\refint\PruebaTecnicaImaginemos.Application.dll
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.pdb
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\PruebaTecnicaImaginemos.Application.genruntimeconfig.cache
+C:\Users\rafae\source\repos\PruebaTecnicaImaginemos.Application\obj\Debug\net8.0\ref\PruebaTecnicaImaginemos.Application.dll

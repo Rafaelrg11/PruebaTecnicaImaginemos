@@ -1,0 +1,27 @@
+# Archivos y carpetas comunes a ignorar
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/charts
+**/node_modules
+**/npm-debug.log
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+**/bin
+**/obj
+
+# ¡NO ignores los .csproj ni el Dockerfile!
+# Elimina estas líneas:
+# **/*.*proj.user
+# **/Dockerfile*
