@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copiamos todos los archivos de la carpeta raíz al contenedor
-COPY . .
+COPY . /src
 
 # Restauramos las dependencias
 RUN dotnet restore PruebaTecnicaImaginemos.sln
@@ -27,6 +27,7 @@ COPY --from=build /app/publish .
 
 # Definimos el comando de entrada
 ENTRYPOINT ["dotnet", "PruebaTecnicaImaginemos.ApiView.dll"]
+
 
 
 

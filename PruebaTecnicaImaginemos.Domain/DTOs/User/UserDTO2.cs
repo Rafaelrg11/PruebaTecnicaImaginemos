@@ -8,7 +8,6 @@ namespace PruebaTecnicaImaginemos.Domain.DTOs.User;
 
 public sealed class UserDTO2
 {
-    public Guid IdUser { get; set; }
     public string Name { get; set; }
     public string DNI { get; set; }
 }
