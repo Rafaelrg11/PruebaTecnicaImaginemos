@@ -26,8 +26,7 @@ internal class GetSalesQueryHandler : IQueryHandler<GetSalesQuery, (List<SaleRes
         const string sql = @"SELECT
             ""Id"" AS ""IdSale"",
             ""TimeSale"" AS ""TimeSale"",
-            ""Total"" AS ""Total"",
-            ""UserId AS ""UserId""
+            ""UserId"" AS ""UserId""
             FROM public. ""sale"";";
 
         var result = await connection.QueryAsync<SaleResponse>(sql, cancellationToken);

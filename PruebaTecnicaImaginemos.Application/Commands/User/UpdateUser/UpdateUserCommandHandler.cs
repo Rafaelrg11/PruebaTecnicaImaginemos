@@ -33,10 +33,10 @@ internal class UpdateUserCommandHandler : ICommandHandler<UpdateUserCommand, Use
 
         if(request.User is not null)
         {
-            id = (Guid)request.User.IdUser;
+            id = (Guid)request.User.Id;
         }
 
-        var model = await _userRepository.GetByIdAsync(request.User.IdUser);
+        var model = await _userRepository.GetByIdAsync(request.User.Id);
 
         if (model is null) 
         {

@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PruebaTecnicaImaginemos.Application.Commands.Product.GetAllProduct;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.CreateSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.DeleteSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.GetAllSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.GetSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.PaginationSaleDetail;
+using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 
 namespace PruebaTecnicaImaginemos.ApiView.Controllers;
@@ -41,9 +43,21 @@ public class SaleDetailController : Controller
     {
         try
         {
-            var sale = await _sender.Send(new GetAllSaleDetailQuery());
+            var result = await _sender.Send(new GetAllSaleDetailQuery());
 
-            return Ok(sale);
+            // Verifica si la operación fue exitosa
+            if (result.IsSuccess)
+            {
+                var (details, totalCount) = result.Value; // Desestructura el tuple
+
+                return Ok(new
+                {
+                    details = details,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
         }
         catch (Exception ex)
         {
@@ -66,14 +80,40 @@ public class SaleDetailController : Controller
         }
     }
 
-    [HttpGet("PaginationDetail")]
-    public async Task<IActionResult> PaginationDetail([FromBody] int limit = 12,[FromBody] int skip = 0)
+    [HttpPut("UpdateDetail")]
+    public async Task<IActionResult> UpdateDetail(SaleDetailDTO2 detaildto, CancellationToken cancellationToken)
     {
         try
         {
-            var sale = await _sender.Send(new PaginationSaleDetailQuery(skip, limit));
+            var detail = await _sender.Send(new UpdateSaleDetailCommand(detaildto));
 
-            return Ok(sale);
+            return Ok(detail);
+        }catch(Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpGet("PaginationDetail")]
+    public async Task<IActionResult> PaginationDetail([FromQuery] int limit = 12,[FromQuery] int skip = 0)
+    {
+        try
+        {
+            var result = await _sender.Send(new PaginationSaleDetailQuery(skip, limit));
+
+            // Verifica si la operación fue exitosa
+            if (result.IsSuccess)
+            {
+                var (details, totalCount) = result.Value; // Desestructura el tuple
+
+                return Ok(new
+                {
+                    Details = details,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
         }
         catch (Exception ex)
         {

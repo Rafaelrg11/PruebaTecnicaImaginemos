@@ -1,11 +1,15 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PruebaTecnicaImaginemos.Application.Commands.Product.GetAllProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.CreateSale;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.DeleteSale;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.GetSale;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.GetSales;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.PaginationSale;
+using PruebaTecnicaImaginemos.Application.Commands.Sale.UpdateSale;
+using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 using PruebaTecnicaImaginemos.Domain.DTOs.Sale;
+using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 
 namespace PruebaTecnicaImaginemos.ApiView.Controllers;
 
@@ -40,9 +44,21 @@ public class SaleController : Controller
     {
         try
         {
-            var sale = await _sender.Send(new GetSalesQuery());
+            var result = await _sender.Send(new GetSalesQuery());
 
-            return Ok(sale);
+            // Verifica si la operación fue exitosa
+            if (result.IsSuccess)
+            {
+                var (Sales, totalCount) = result.Value; // Desestructura el tuple
+
+                return Ok(new
+                {
+                    Sales = Sales,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
         }
         catch (Exception ex)
         {
@@ -58,6 +74,21 @@ public class SaleController : Controller
             var sale = await _sender.Send(new GetSaleQuery(guid));
 
             return Ok(sale);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPut("UpdateSale")]
+    public async Task<IActionResult> UpdateSale(SaleDTO2 sale, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var detail = await _sender.Send(new UpdateSaleCommand(sale));
+
+            return Ok(detail);
         }
         catch (Exception ex)
         {

@@ -23,16 +23,19 @@ internal class PaginationSaleDetailQueryHandler : IQueryHandler<PaginationSaleDe
     {
         using var connection = _connectionFactory.CreateConnection();
 
+        var testQuery = await connection.ExecuteScalarAsync<string>("SELECT current_database();");
+        Console.WriteLine($"Conectado a la base de datos: {testQuery}");
+
         string sql = $@"SELECT ""Id"" AS ""IdSaleDetail"",
             ""IdProduct"" AS ""IdProduct"",
             ""IdSale"" AS ""IdSale"",
             ""Amount"" AS ""Amount"",
             ""UnitPrice"" AS ""UnitPrice"",
             ""Total"" AS ""Total""
-            FROM public. ""detail_sale""
-            LIMIT {request.limit}
-            OFFSET {request.skip};
-            ";
+            FROM public.detail_sale
+            LIMIT {request.limit} 
+            OFFSET {request.skip};";
+            
 
         var result = await connection.QueryAsync<SaleDetailResponse>(sql, cancellationToken);
 
@@ -40,7 +43,7 @@ internal class PaginationSaleDetailQueryHandler : IQueryHandler<PaginationSaleDe
 
         string countSql = @"
                 SELECT COUNT(*)
-                FROM public ""detail_sale""";
+                FROM public. ""detail_sale""";
 
         var totalCount = await connection.ExecuteScalarAsync<long>(countSql, cancellationToken);
 

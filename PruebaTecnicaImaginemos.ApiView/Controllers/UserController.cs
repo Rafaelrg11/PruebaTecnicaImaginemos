@@ -1,12 +1,16 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PruebaTecnicaImaginemos.Application.Commands.Product.GetAllProduct;
+using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.User;
 using PruebaTecnicaImaginemos.Application.Commands.User.CreateUser;
 using PruebaTecnicaImaginemos.Application.Commands.User.DeleteUser;
 using PruebaTecnicaImaginemos.Application.Commands.User.GetUser;
 using PruebaTecnicaImaginemos.Application.Commands.User.GetUsers;
 using PruebaTecnicaImaginemos.Application.Commands.User.PaginationUser;
+using PruebaTecnicaImaginemos.Application.Commands.User.UpdateUser;
 using PruebaTecnicaImaginemos.Domain.DTOs.Responses;
+using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 using PruebaTecnicaImaginemos.Domain.DTOs.User;
 
 namespace PruebaTecnicaImaginemos.ApiView.Controllers;
@@ -33,13 +37,30 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetAllUsers")]
-    public async Task<IActionResult> GetAllUsers(Guid guid)
+    public async Task<IActionResult> GetAllUsers()
     {
-        var user = new GetAllUsersQuery();
+        try
+        {
+            var result = await _sender.Send(new GetAllUsersQuery());
 
-        await _sender.Send(user);
+            // Verifica si la operación fue exitosa
+            if (result.IsSuccess)
+            {
+                var (users, totalCount) = result.Value; // Desestructura el tuple
 
-        return Ok(user);
+                return Ok(new
+                {
+                    Users = users,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet("GetUser")]
@@ -50,6 +71,21 @@ public class UserController : ControllerBase
         await _sender.Send(user);
 
         return Ok(user);
+    }
+
+    [HttpPut("UpdateUser")]
+    public async Task<IActionResult> UpdateUser(UserDTO2 user, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var detail = await _sender.Send(new UpdateUserCommand(user));
+
+            return Ok(detail);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet("PaginationUser")]

@@ -4,8 +4,11 @@ using PruebaTecnicaImaginemos.Application.Commands.Product.CreateProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.DeleteProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.GetAllProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.GetProduct;
+using PruebaTecnicaImaginemos.Application.Commands.Product.UpgradeProduct;
+using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.User.PaginationUser;
 using PruebaTecnicaImaginemos.Domain.DTOs.Product;
+using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 
 namespace PruebaTecnicaImaginemos.ApiView.Controllers;
 
@@ -41,9 +44,21 @@ public class ProductController : Controller
     {
         try
         {
-            var product = await _sender.Send(new GetProductsQuery());
+            var result = await _sender.Send(new GetProductsQuery());
 
-            return Ok(product);
+            // Verifica si la operación fue exitosa
+            if (result.IsSuccess)
+            {
+                var (products, totalCount) = result.Value; // Desestructura el tuple
+
+                return Ok(new
+                {
+                    Products = products,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
         }
         catch (Exception ex)
         {
@@ -59,6 +74,21 @@ public class ProductController : Controller
             var product = await _sender.Send(new GetProductQuery(guid));
 
             return Ok(product);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPut("UpdateProduct")]
+    public async Task<IActionResult> UpdateProduct(ProductDTO2 product, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var detail = await _sender.Send(new UpdateProductsCommand(product));
+
+            return Ok(detail);
         }
         catch (Exception ex)
         {

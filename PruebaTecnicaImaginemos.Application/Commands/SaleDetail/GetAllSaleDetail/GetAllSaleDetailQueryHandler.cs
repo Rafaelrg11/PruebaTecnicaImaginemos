@@ -24,13 +24,12 @@ internal class GetAllSaleDetailQueryHandler : IQueryHandler<GetAllSaleDetailQuer
         using var connection = _connectionFactory.CreateConnection();
 
         const string sql = @"SELECT
-            sd. ""Id"" AS ""IdSaleDetail"",
-            sd. ""IdProduct"" AS ""IdProduct"",
-            sd. ""IdSale"" AS ""IdSale"",
-            sd. ""Amount"" AS ""Amount"",
-            sd. ""UnitPrice"" AS ""UnitPrice"",
-            sd. ""Total"" AS ""Total"",
-            
+            ""Id"" AS ""IdSaleDetail"",
+            ""IdProduct"" AS ""IdProduct"",
+            ""IdSale"" AS ""IdSale"",
+            ""Amount"" AS ""Amount"",
+            ""UnitPrice"" AS ""UnitPrice"",
+            ""Total"" AS ""Total""          
             FROM public. ""detail_sale"";";
 
         var result = await connection.QueryAsync<SaleDetailResponse>(sql, cancellationToken);
