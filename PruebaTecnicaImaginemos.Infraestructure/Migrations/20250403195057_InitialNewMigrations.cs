@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialNewMigrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,8 +45,7 @@ namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Total = table.Column<int>(type: "integer", nullable: false),
+                    TimeSale = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UserId = table.Column<Guid>(type: "uuid", nullable: false),
                     xmin = table.Column<uint>(type: "xid", rowVersion: true, nullable: false)
                 },
@@ -62,7 +61,7 @@ namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "detail_sail",
+                name: "detail_sale",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -75,15 +74,15 @@ namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_detail_sail", x => x.Id);
+                    table.PrimaryKey("PK_detail_sale", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_detail_sail_products_IdProduct",
+                        name: "FK_detail_sale_products_IdProduct",
                         column: x => x.IdProduct,
                         principalTable: "products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_detail_sail_sale_SaleId",
+                        name: "FK_detail_sale_sale_IdSale",
                         column: x => x.IdSale,
                         principalTable: "sale",
                         principalColumn: "Id",
@@ -91,14 +90,14 @@ namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_detail_sail_IdProduct",
-                table: "detail_sail",
+                name: "IX_detail_sale_IdProduct",
+                table: "detail_sale",
                 column: "IdProduct");
 
             migrationBuilder.CreateIndex(
-                name: "IX_detail_sail_SaleId",
-                table: "detail_sail",
-                column: "SaleId");
+                name: "IX_detail_sale_IdSale",
+                table: "detail_sale",
+                column: "IdSale");
 
             migrationBuilder.CreateIndex(
                 name: "IX_sale_UserId",
@@ -110,7 +109,7 @@ namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "detail_sail");
+                name: "detail_sale");
 
             migrationBuilder.DropTable(
                 name: "products");

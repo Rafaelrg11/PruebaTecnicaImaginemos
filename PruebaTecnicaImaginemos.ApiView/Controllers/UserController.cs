@@ -91,15 +91,27 @@ public class UserController : ControllerBase
     [HttpGet("PaginationUser")]
     public async Task<IActionResult> PaginationUser(int skip = 0, int limit = 12)
     {
-        var user = await _sender.Send(new PaginationUserQuery(limit, skip));
-
-        var response = new ResponseStandar<List<UserResponse>>()
+        try
         {
-            data = user.Value.Item1,
-            total = user.Value.Item2
-        };
+            var result = await _sender.Send(new PaginationUserQuery(limit, skip));
 
-        return Ok(response);
+            if (result.IsSuccess)
+            {
+                var (users, totalCount) = result.Value; 
+
+                return Ok(new
+                {
+                    Users = users,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpDelete("DeleteUser")]

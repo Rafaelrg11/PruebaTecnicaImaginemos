@@ -53,7 +53,6 @@ public class SaleDetailController : Controller
                 return Ok(new
                 {
                     details = details,
-                    TotalCount = totalCount
                 });
             }
 

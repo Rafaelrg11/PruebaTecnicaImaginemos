@@ -12,8 +12,8 @@ using PruebaTecnicaImaginemos.Infraestructure;
 namespace PruebaTecnicaImaginemos.Infraestructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250320034646_updateDbSaleTable")]
-    partial class updateDbSaleTable
+    [Migration("20250403195057_InitialNewMigrations")]
+    partial class InitialNewMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

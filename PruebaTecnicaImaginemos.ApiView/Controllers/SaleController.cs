@@ -8,6 +8,7 @@ using PruebaTecnicaImaginemos.Application.Commands.Sale.GetSales;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.PaginationSale;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.UpdateSale;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
+using PruebaTecnicaImaginemos.Domain.Abstractions;
 using PruebaTecnicaImaginemos.Domain.DTOs.Sale;
 using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 
@@ -54,7 +55,6 @@ public class SaleController : Controller
                 return Ok(new
                 {
                     Sales = Sales,
-                    TotalCount = totalCount
                 });
             }
 
@@ -103,7 +103,18 @@ public class SaleController : Controller
         {
             var sale = await _sender.Send(new PaginationSaleQuery(skip, limit));
 
-            return Ok(sale);
+            if (sale.IsSuccess)
+            {
+                var (Sales, totalCount) = sale.Value; // Desestructura el tuple
+
+                return Ok(new
+                {
+                    Sales = Sales,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(sale.Error);
         }
         catch (Exception ex)
         {

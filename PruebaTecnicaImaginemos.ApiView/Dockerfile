@@ -2,8 +2,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
-EXPOSE 8081
-
 
 # Esta fase se usa para compilar el proyecto de servicio
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -25,7 +23,7 @@ RUN dotnet publish "./PruebaTecnicaImaginemos.ApiView.csproj" -c $BUILD_CONFIGUR
 
 # Esta fase se usa en producción o cuando se ejecuta desde VS en modo normal (valor predeterminado cuando no se usa la configuración de depuración)
 FROM base AS final
-WORKDIR /app
+WORKDIR /app 
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "PruebaTecnicaImaginemos.ApiView.dll"]
 

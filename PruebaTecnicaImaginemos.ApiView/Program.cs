@@ -1,6 +1,8 @@
+using PruebaTecnicaImaginemos.ApiView.Extencions;
 using PruebaTecnicaImaginemos.ApiView.Middleware;
 using PruebaTecnicaImaginemos.Application;
 using PruebaTecnicaImaginemos.Infraestructure;
+using PruebaTecnicaImaginemos.Infraestructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,13 +14,17 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+DbInitializer.ApplyMigrations(app);
+
+if (app.Environment.IsDevelopment() || true)
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.ApplyMigrations();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 

@@ -4,9 +4,11 @@ using PruebaTecnicaImaginemos.Application.Commands.Product.CreateProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.DeleteProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.GetAllProduct;
 using PruebaTecnicaImaginemos.Application.Commands.Product.GetProduct;
+using PruebaTecnicaImaginemos.Application.Commands.Product.Pagination;
 using PruebaTecnicaImaginemos.Application.Commands.Product.UpgradeProduct;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.User.PaginationUser;
+using PruebaTecnicaImaginemos.Domain.Abstractions;
 using PruebaTecnicaImaginemos.Domain.DTOs.Product;
 using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 
@@ -54,7 +56,6 @@ public class ProductController : Controller
                 return Ok(new
                 {
                     Products = products,
-                    TotalCount = totalCount
                 });
             }
 
@@ -101,15 +102,27 @@ public class ProductController : Controller
     {
         try
         {
-            var product = await _sender.Send(new PaginationUserQuery(limit, skip));
+            var result = await _sender.Send(new ProductPaginationQuery(skip, limit));
 
-            return Ok(product);
+            if (result.IsSuccess)
+            {
+                var (products, totalCount) = result.Value;
+
+                return Ok(new
+                {
+                    Products = products,
+                    TotalCount = totalCount
+                });
+            }
+
+            return BadRequest(result.Error);
         }
         catch (Exception ex)
         {
             return BadRequest(ex.Message);
         }
     }
+
 
     [HttpDelete("DeleteProduct")]
     public async Task<IActionResult> DeleteProduct(Guid guid)
