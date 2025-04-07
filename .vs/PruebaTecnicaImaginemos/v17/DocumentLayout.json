@@ -70,8 +70,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.Application\\Commands\\Product\\Pagination\\ProductPaginationQueryHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA5wCcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T22:02:46.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T22:02:46.322Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\UserController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAkwGYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:56:41.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T21:56:41.322Z"
             },
             {
               "$type": "Document",
@@ -96,8 +94,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleDetailController.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAcwGEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:56:08.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T21:56:08.208Z"
             },
             {
               "$type": "Document",
@@ -107,7 +104,7 @@
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAIwGYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwFUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T21:55:34.969Z",
               "EditorCaption": ""
@@ -122,8 +119,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.Application\\Commands\\Product\\GetAllProduct\\GetProductsQueryHandler.cs",
               "ViewState": "AgIAABEAAAAAAAAAAIAwwB4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:04:57.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T20:04:57.642Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-03T18:17:20.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T18:17:20.783Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-03T18:02:47.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T18:02:47.639Z"
             },
             {
               "$type": "Document",
@@ -161,8 +155,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.Infraestructure\\Extensions\\DbInitializer.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAqwBMAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T23:12:40.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T23:12:40.454Z"
             },
             {
               "$type": "Document",
@@ -174,8 +167,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Extensions\\ApplicationBuilderExtensions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T22:35:32.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T22:35:32.714Z"
             },
             {
               "$type": "Document",
@@ -187,8 +179,7 @@
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T22:31:34.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T22:31:34.275Z"
             }
           ]
         },

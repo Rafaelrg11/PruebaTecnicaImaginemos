@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FED8E423-E617-45D8-AF59-83154BF761C9}|PruebaTecnicaImaginemos.Application\\PruebaTecnicaImaginemos.Application.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.application\\commands\\product\\pagination\\productpaginationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FED8E423-E617-45D8-AF59-83154BF761C9}|PruebaTecnicaImaginemos.Application\\PruebaTecnicaImaginemos.Application.csproj|solutionrelative:pruebatecnicaimaginemos.application\\commands\\product\\pagination\\productpaginationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\saledetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\saledetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|solutionrelative:pruebatecnicaimaginemos.apiview\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FED8E423-E617-45D8-AF59-83154BF761C9}|PruebaTecnicaImaginemos.Application\\PruebaTecnicaImaginemos.Application.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.application\\commands\\product\\pagination\\productpaginationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FED8E423-E617-45D8-AF59-83154BF761C9}|PruebaTecnicaImaginemos.Application\\PruebaTecnicaImaginemos.Application.csproj|solutionrelative:pruebatecnicaimaginemos.application\\commands\\product\\pagination\\productpaginationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EA38A8C-9796-4F2A-A25C-A600B3E55DC2}|PruebaTecnicaImaginemos.ApiView\\PruebaTecnicaImaginemos.ApiView.csproj|c:\\users\\rafae\\source\\repos\\pruebatecnicaimaginemos\\pruebatecnicaimaginemos.apiview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,28 +62,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ProductPaginationQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.Application\\Commands\\Product\\Pagination\\ProductPaginationQueryHandler.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.Application\\Commands\\Product\\Pagination\\ProductPaginationQueryHandler.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.Application\\Commands\\Product\\Pagination\\ProductPaginationQueryHandler.cs",
               "RelativeToolTip": "PruebaTecnicaImaginemos.Application\\Commands\\Product\\Pagination\\ProductPaginationQueryHandler.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA5wBUAAABbAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAA5wCcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T22:02:46.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAowGwAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T21:54:14.142Z",
               "EditorCaption": ""
             },
             {
@@ -105,33 +88,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SaleDetailController.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleDetailController.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleDetailController.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleDetailController.cs",
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleDetailController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAcwDQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwGEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T21:56:08.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "SaleController.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
               "RelativeToolTip": "PruebaTecnicaImaginemos.ApiView\\Controllers\\SaleController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAowDgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAIwGYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T21:55:34.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "GetProductsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.Application\\Commands\\Product\\GetAllProduct\\GetProductsQueryHandler.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.Application\\Commands\\Product\\GetAllProduct\\GetProductsQueryHandler.cs",
@@ -144,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Dockerfile",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Dockerfile",
@@ -157,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\appsettings.json",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\appsettings.json",
@@ -170,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "DbInitializer.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.Infraestructure\\Extensions\\DbInitializer.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.Infraestructure\\Extensions\\DbInitializer.cs",
@@ -183,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "ApplicationBuilderExtensions.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Extensions\\ApplicationBuilderExtensions.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Extensions\\ApplicationBuilderExtensions.cs",
@@ -196,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\PruebaTecnicaImaginemos\\PruebaTecnicaImaginemos.ApiView\\Program.cs",
               "RelativeDocumentMoniker": "PruebaTecnicaImaginemos.ApiView\\Program.cs",

@@ -31,9 +31,9 @@ public class UserController : ControllerBase
     {
         var userC = new CreateUserCommand(user.Name, user.DNI);
 
-        await _sender.Send(userC);
+        var result = await _sender.Send(userC);
 
-        return Ok(userC);
+        return Ok(result);
     }
 
     [HttpGet("GetAllUsers")]
@@ -66,11 +66,20 @@ public class UserController : ControllerBase
     [HttpGet("GetUser")]
     public async Task<IActionResult> GetUser(Guid guid)
     {
-        var user = new GetUserQuery(guid);
+        try
+        {
+            var user = new GetUserQuery(guid);
 
-        await _sender.Send(user);
+            await _sender.Send(user);
 
-        return Ok(user);
+            return Ok(user);
+        }
+        catch (Exception ex)
+        {
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 
     [HttpPut("UpdateUser")]
