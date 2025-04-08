@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.GetSale;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.Abstractions;
 using PruebaTecnicaImaginemos.Domain.DTOs.Sale;
 using PruebaTecnicaImaginemos.Domain.Interfaces;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.Sale.UpdateSale;
 
-internal class UpdateSaleCommandHandler : ICommandHandler<UpdateSaleCommand, SaleDTO>
+internal class UpdateSaleCommandHandler : ICommandHandler<UpdateSaleCommand, SaleResponse2>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly ISender _sender;
@@ -26,7 +27,7 @@ internal class UpdateSaleCommandHandler : ICommandHandler<UpdateSaleCommand, Sal
         _saleRepository = saleRepository;
     }
 
-    public async Task<Result<SaleDTO>> Handle(UpdateSaleCommand request, CancellationToken cancellationToken)
+    public async Task<Result<SaleResponse2>> Handle(UpdateSaleCommand request, CancellationToken cancellationToken)
     {
         Guid guid;
 

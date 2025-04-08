@@ -1,8 +1,11 @@
 ﻿using Dapper;
 using PruebaTecnicaImaginemos.Application.Abstraction.Data;
 using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
+using PruebaTecnicaImaginemos.Application.Commands.User;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.Abstractions;
 using PruebaTecnicaImaginemos.Domain.DTOs.Sale;
+using PruebaTecnicaImaginemos.Domain.Sale;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.Sale.GetSale;
 
-internal class GetSaleQueryHandler : IQueryHandler<GetSaleQuery, SaleDTO>
+internal class GetSaleQueryHandler : IQueryHandler<GetSaleQuery, SaleResponse2>
 {
     private readonly ISqlConnectionFactory _connectionFactory;
 
@@ -20,22 +23,36 @@ internal class GetSaleQueryHandler : IQueryHandler<GetSaleQuery, SaleDTO>
         _connectionFactory = connectionFactory;
     }
 
-    public async Task<Result<SaleDTO>> Handle(GetSaleQuery request, CancellationToken cancellationToken)
+    public async Task<Result<SaleResponse2>> Handle(GetSaleQuery request, CancellationToken cancellationToken)
     {
         using var _connection = _connectionFactory.CreateConnection();
 
-        string sql = $@"SELECT ""Id"" AS ""IdSale"",
-            ""TimeSale"" AS ""TimeSale"",
-            ""Total"" AS ""Total"",
-            ""UserId AS ""UserId""
-            
-            FROM public. ""sale""
-                     FROM public. ""sale"" WHERE Id = '{request.guid.ToString()}'";
+        var sql = @"
+        SELECT 
+            s.""Id"" AS IdSale, 
+            s.""TimeSale"", 
+            s.""UserId"",
+            u.""Id"" AS ""IdUser"", 
+            u.""Name"" AS ""Name"", 
+            u.""DNI"" AS ""DNI""
+        FROM public.""sale"" s
+        LEFT JOIN public.""users"" u ON s.""UserId"" = u.""Id"";
+    ";
 
-        var result = await _connection.QueryAsync<SaleDTO>(sql);
+        var sales = await _connection.QueryAsync<SaleResponse2, UserResponse2, SaleResponse2>(
+                    sql,
+                    (sale, user) =>
+                    {
+                        sale.user = user;
+                        return sale;
+                    },
+                    splitOn: "IdUser");
 
-        var module = result.FirstOrDefault();
+        var sale = sales.FirstOrDefault();
 
-        return module;
+        if (sales is null)
+            return Result.Failure<SaleResponse2>("Venta no encontrada");
+
+        return Result<SaleResponse2>.Success(sale);
     }
 }

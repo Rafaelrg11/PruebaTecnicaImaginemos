@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using PruebaTecnicaImaginemos.Application.Abstraction.Data;
 using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
+using PruebaTecnicaImaginemos.Application.Commands.User;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.Sale.GetSales;
 
-internal class GetSalesQueryHandler : IQueryHandler<GetSalesQuery, (List<SaleResponse>, long)>
+internal class GetSalesQueryHandler : IQueryHandler<GetSalesQuery, List<SaleResponse2>>
 {
     private readonly ISqlConnectionFactory _connectionFactory;
 
@@ -19,27 +21,33 @@ internal class GetSalesQueryHandler : IQueryHandler<GetSalesQuery, (List<SaleRes
         _connectionFactory = connectionFactory;
     }
 
-    public async Task<Result<(List<SaleResponse>, long)>> Handle(GetSalesQuery request, CancellationToken cancellationToken)
+    public async Task<Result<List<SaleResponse2>>> Handle(GetSalesQuery request, CancellationToken cancellationToken)
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        const string sql = @"SELECT
-            ""Id"" AS ""IdSale"",
-            ""TimeSale"" AS ""TimeSale"",
-            ""UserId"" AS ""UserId""
-            FROM public. ""sale"";";
+        var sql = @"
+        SELECT 
+            s.""Id"" AS IdSale, 
+            s.""TimeSale"", 
+            s.""UserId"",
+            u.""Id"" AS IdUser, 
+            u.""Name"" AS Name, 
+            u.""DNI"" AS DNI
+        FROM public.""sale"" s
+        LEFT JOIN public.""users"" u ON s.""UserId"" = u.""Id"";
+    ";
 
-        var result = await connection.QueryAsync<SaleResponse>(sql, cancellationToken);
+        var sales = await connection.QueryAsync<SaleResponse2, UserResponse2, SaleResponse2>(
+            sql,
+            (sale, user) =>
+            {
+                sale.user = user; 
+                return sale;
+            },
+            splitOn: "IdUser");
 
-        var module = result.ToList();
+        var resultList = sales.ToList();
 
-        string countSql = @"
-                SELECT COUNT(*)
-                FROM public. ""sale""
-                ";
-
-        var totalCount = await connection.ExecuteScalarAsync<long>(countSql, cancellationToken);
-
-        return (module, totalCount);
+        return Result<List<SaleResponse>>.Success((resultList));
     }
 }

@@ -3,6 +3,7 @@ using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
 using PruebaTecnicaImaginemos.Application.Commands.Sale.GetSale;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.GetAllSaleDetail;
 using PruebaTecnicaImaginemos.Application.Commands.SaleDetail.GetSaleDetail;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.Abstractions;
 using PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail;
 using PruebaTecnicaImaginemos.Domain.Interfaces;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.SaleDetail.UpdateSaleDetail;
 
-internal class UpdateSaleDetailCommandHandler : ICommandHandler<UpdateSaleDetailCommand, SaleDetailDTO>
+internal class UpdateSaleDetailCommandHandler : ICommandHandler<UpdateSaleDetailCommand, SailDetailResponse2>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly ISender _sender;
@@ -28,7 +29,7 @@ internal class UpdateSaleDetailCommandHandler : ICommandHandler<UpdateSaleDetail
         _saleDetailRepository = saleDetailRepository;
     }
 
-    public async Task<Result<SaleDetailDTO>> Handle(UpdateSaleDetailCommand request, CancellationToken cancellationToken)
+    public async Task<Result<SailDetailResponse2>> Handle(UpdateSaleDetailCommand request, CancellationToken cancellationToken)
     {
         Guid guid;
 

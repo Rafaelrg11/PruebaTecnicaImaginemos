@@ -47,18 +47,16 @@ public class SaleController : Controller
         {
             var result = await _sender.Send(new GetSalesQuery());
 
-            // Verifica si la operación fue exitosa
             if (result.IsSuccess)
             {
-                var (Sales, totalCount) = result.Value; // Desestructura el tuple
+                var sales = result.Value; 
 
                 return Ok(new
                 {
-                    Sales = Sales,
+                    Sales = sales
                 });
             }
-
-            return BadRequest(result.Error);
+                return BadRequest(result.Error);
         }
         catch (Exception ex)
         {

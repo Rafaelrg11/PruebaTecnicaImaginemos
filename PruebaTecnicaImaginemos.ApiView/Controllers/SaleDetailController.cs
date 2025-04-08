@@ -45,10 +45,9 @@ public class SaleDetailController : Controller
         {
             var result = await _sender.Send(new GetAllSaleDetailQuery());
 
-            // Verifica si la operación fue exitosa
             if (result.IsSuccess)
             {
-                var (details, totalCount) = result.Value; // Desestructura el tuple
+                var details = result.Value;
 
                 return Ok(new
                 {
@@ -71,7 +70,7 @@ public class SaleDetailController : Controller
         {
             var sale = await _sender.Send(new GetSaleDetailQuery(guid));
 
-            return Ok(sale);
+            return Ok(sale.Value);
         }
         catch (Exception ex)
         {

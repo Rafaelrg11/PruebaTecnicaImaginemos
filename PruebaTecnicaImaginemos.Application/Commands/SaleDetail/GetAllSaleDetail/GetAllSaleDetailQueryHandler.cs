@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using PruebaTecnicaImaginemos.Application.Abstraction.Data;
 using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.SaleDetail.GetAllSaleDetail;
 
-internal class GetAllSaleDetailQueryHandler : IQueryHandler<GetAllSaleDetailQuery, (List<SaleDetailResponse>, long)>
+internal class GetAllSaleDetailQueryHandler : IQueryHandler<GetAllSaleDetailQuery, List<SailDetailResponse2>>
 {
     private readonly ISqlConnectionFactory _connectionFactory;
 
@@ -19,29 +20,52 @@ internal class GetAllSaleDetailQueryHandler : IQueryHandler<GetAllSaleDetailQuer
         _connectionFactory = connectionFactory;
     }
 
-    public async Task<Result<(List<SaleDetailResponse>, long)>> Handle(GetAllSaleDetailQuery request, CancellationToken cancellationToken)
+    public async Task<Result<List<SailDetailResponse2>>> Handle(GetAllSaleDetailQuery request, CancellationToken cancellationToken)
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        const string sql = @"SELECT
-            ""Id"" AS ""IdSaleDetail"",
-            ""IdProduct"" AS ""IdProduct"",
-            ""IdSale"" AS ""IdSale"",
-            ""Amount"" AS ""Amount"",
-            ""UnitPrice"" AS ""UnitPrice"",
-            ""Total"" AS ""Total""          
-            FROM public. ""detail_sale"";";
+        const string sql = @"
+        SELECT 
+            sd.""Id"" AS ""IdSaleDetail"",
+            sd.""IdProduct"" AS ""IdProduct"",
+            sd.""IdSale"" AS ""IdSale"",
+            sd.""Amount"", 
+            sd.""UnitPrice"",
+            sd.""Total"",
 
-        var result = await connection.QueryAsync<SaleDetailResponse>(sql, cancellationToken);
+            p.""Id"" AS ""IdProduct"",
+            p.""NameProduct"" AS ""NameProduct"", 
+            p.""Price"", 
+            p.""Description"",
 
-        var module = result.ToList();
+            s.""Id"" AS ""IdSale"", 
+            s.""TimeSale"", 
+            s.""UserId"",
+            u.""Id"" AS ""UserId"", 
+            u.""Name"" AS ""Name"", 
+            u.""DNI"" AS ""DNI""
 
-        string countSql = @"
-                SELECT COUNT(*)
-                FROM public. ""detail_sale""";
+        FROM public.""detail_sale"" sd
+        LEFT JOIN public.""products"" p ON sd.""IdProduct"" = p.""Id""
+        LEFT JOIN public.""sale"" s ON sd.""IdSale"" = s.""Id""
+        LEFT JOIN public.""users"" u ON s.""UserId"" = u.""Id""
+        ;";
 
-        var totalCount = await connection.ExecuteScalarAsync<long>(countSql, cancellationToken);
+        var details = new List<SailDetailResponse2>();
 
-        return (module, totalCount);
+        await connection.QueryAsync<SailDetailResponse2, ProductResponse2, SaleResponse3, UserResponse2, SailDetailResponse2>(
+            sql,
+            (detail, product, sale, user) =>
+            {
+                detail.Product = product;
+                detail.sale = sale;
+                detail.sale.user = user;
+                details.Add(detail);
+                return detail;
+            },
+            splitOn: "IdProduct,IdSale,UserId"
+        );
+
+        return Result.Success((details)); 
     }
 }

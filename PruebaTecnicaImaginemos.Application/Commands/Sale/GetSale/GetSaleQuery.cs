@@ -1,4 +1,5 @@
 ﻿using PruebaTecnicaImaginemos.Application.Abstraction.Messaging;
+using PruebaTecnicaImaginemos.Application.Responses;
 using PruebaTecnicaImaginemos.Domain.DTOs.Sale;
 using System;
 using System.Collections.Generic;
@@ -8,4 +9,4 @@ using System.Threading.Tasks;
 
 namespace PruebaTecnicaImaginemos.Application.Commands.Sale.GetSale;
 
-public sealed record GetSaleQuery(Guid guid) : IQuery<SaleDTO> { }
+public sealed record GetSaleQuery(Guid guid) : IQuery<SaleResponse2> { }

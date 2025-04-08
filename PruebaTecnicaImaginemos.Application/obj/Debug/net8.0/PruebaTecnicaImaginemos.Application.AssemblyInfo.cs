@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaTecnicaImaginemos.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d14fe690a2059c67fbd470b879db931e36cafef9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85833598b0b60737559bc3cffc2f83699d288987")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaTecnicaImaginemos.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaTecnicaImaginemos.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
